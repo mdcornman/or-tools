@@ -188,8 +188,8 @@ proto_library(
     deps = [
         ":routing_enums_proto",
         ":solver_parameters_proto",
-        "@com_google_protobuf//:duration_proto",
         "//ortools/util:optional_boolean_proto",
+        "@com_google_protobuf//:duration_proto",
     ],
 )
 
@@ -219,12 +219,12 @@ cc_library(
         ":routing_parameters_cc_proto",
         ":solver_parameters_cc_proto",
         "//ortools/base",
-        "@com_google_protobuf//:protobuf",
+        "//ortools/base:protoutil",
+        "//ortools/base:statusor",
+        "//ortools/util:optional_boolean_cc_proto",
         "@com_google_absl//absl/strings",
         "@com_google_absl//absl/time",
-        "//ortools/util:optional_boolean_cc_proto",
-        "//ortools/base:statusor",
-        "//ortools/base:protoutil",
+        "@com_google_protobuf//:protobuf",
     ],
 )
 
@@ -241,11 +241,11 @@ cc_library(
         ":routing_parameters",
         ":routing_parameters_cc_proto",
         "//ortools/base",
-        "@com_google_protobuf//:protobuf",
-        "@com_google_absl//absl/time",
         "//ortools/base:map_util",
-        "//ortools/util:optional_boolean_cc_proto",
         "//ortools/base:protoutil",
+        "//ortools/util:optional_boolean_cc_proto",
+        "@com_google_absl//absl/time",
+        "@com_google_protobuf//:protobuf",
     ],
 )
 
@@ -267,9 +267,9 @@ cc_library(
     deps = [
         ":routing_types",
         "//ortools/base",
-        "@com_google_absl//absl/container:flat_hash_set",
         "//ortools/base:int_type_indexed_vector",
         "//ortools/base:map_util",
+        "@com_google_absl//absl/container:flat_hash_set",
     ],
 )
 
